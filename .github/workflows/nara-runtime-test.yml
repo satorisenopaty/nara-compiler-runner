@@ -65,20 +65,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nara-runtime-test-apk
-          path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/app-debug.apk      - name: Build debug APK
-        working-directory: ${{ env.PROJECT_DIR }}
-        run: |
-          gradle assembleDebug
-      
-
-      - name: Verify APK
-        working-directory: ${{ env.PROJECT_DIR }}
-        run: |
-          test -f app/build/outputs/apk/debug/app-debug.apk
-          ls -lh app/build/outputs/apk/debug/app-debug.apk
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: nara-runtime-test-apk
           path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/app-debug.apk
